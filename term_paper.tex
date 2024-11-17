@@ -97,22 +97,20 @@ This shows all escalators of the zero lattice are at most $5$-dimensional, and t
 
 The $15$-theorem has several corollaries. This also proves that a universal lattice $L$ must contain a universal sublattice of dimension $5$ or less, because $L$ must contain a chain of escalations of the zero lattice. In addition, this provides an easy classification of universal $4$-variable positive-definite integer-matrix quadratic forms: we can find a bound on the discriminant and systematically apply the $15$-theorem to find there are exactly $204$ of them. This was used by Bhargava to determine that Willerding's classification of universal quaternary forms had errors.
 
-\section{Generalizations}
-\begin{table}[H]
-    \begin{tabular}{|l|ll|}
-        \hline
-        & Integer-matrix & Integer-valued \\ \hline
-        Universal & 15-theorem & 290-theorem \\
-        Represents all odd integers & 33-theorem & 451-theorem \\
-        \hline
-    \end{tabular}
-\end{table}
+\section{290-theorem}
+The $290$-theorem states that an integer-\emph{valued} positive-definite quadratic form is universal if and only if it represents all numbers less than $290$, and it has a similar strengthening as the $15$-theorem. The proof uses the same technique as the $15$-theorem. Through calculation, the $3$-dimensional escalators of the zero lattice are determined and calculated to have truants less than $290$. Their escalations are called \emph{basic} 4-dimensional escalators.
 
-The $290$-theorem states that an integer-\emph{valued} positive-definite quadratic form is universal if and only if it represents all numbers less than $290$, and it has a similar strengthening as the $15$-theorem. The proof uses the same technique as the $15$-theorem. Through calculation, the $3$-dimensional escalators of the zero lattice are determined and calculated to have truants less than $290$.
+Most basicfour-dimensional escalator lattices $L_4$ can be proven to be universal by the same argument as in the $15$-theorem: find a three-dimensional sublattice $L_3$ unique in its genus that represents a large set of integers, ensure $L_4$ is not exceptional over $L_3$, and use this to show $L_4$ is universal.
 
-Most four-dimensional escalator lattices $L_4$ can be proven to be universal by the same argument as in the $15$-theorem: find a three-dimensional sublattice $L_3$ unique in its genus that represents a large set of integers, ensure $L_4$ is not exceptional over $L_3$, and use this to show $L_4$ is universal.
+However, more than $2300$ of the $6560$ basic four-dimensional escalator lattices cannot be proven to be universal using this method. Analytic and computational techniques are required. In the end, this separates all four-dimensional integer-valued escalator lattices into three categories:
+\begin{itemize}
+    \item Type I: universal
+    \item Type II: not universal but misses at most three values, that are each critical
+    \item Type III: represents positive integers not of the form $4^a(16k+14)$
+\end{itemize}
+Obviously, after at most three escalations, a Type II four-dimensional escalator becomes universal.
 
-However, more than $2300$ of the $6560$ four-dimensional escalator lattices cannot be proven to be universal using this method. it requires analytic techniques involving many calculations because some universal integer-valued $4$-dimensional lattices do not have $3$-dimensional sublattices unique in their genera, and more advanced arithmetic techniques are inefficient at proving the universality of thousands of quadratic forms.
+\section{blahblah}
 
 The $33$- and $451$-theorem prove similar statements for odd universal integer-valued and integer-matrix quadratic forms, respectively. There have been various generalizations to quadratic forms representing prime numbers (insert reference here), numbers coprime to a certain prime (insert reference here), and more.
 
