@@ -64,7 +64,8 @@ Their truants are $3$ and $5$, respectively. By a similar argument, we can compu
 By computation, they have truants $7, 14, 6, 7, 10, 7, 14, 7, 10$. Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices; we will prove $201$ are universal and the other $6$ can be escalated again.
 
 \subsection{Escalators of dimension $4$ and $5$}
-For most of the four-dimensional escalators $L$, we can prove that they are universal easily. We find a $3$-dimensional sublattice $L'$ that is unique in its genus and use local arguments to prove that $L'$ represents all but a certain set of numbers, using an argument similar to the proof of the three-square theorem. For example, if $L'$ has Gram matrix $\begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bsmallmatrix}$, then $L'$ represents numbers that are not of the form $4^a b$, where $a \ge 0$ and $b \equiv 7 \pmod 8$. Let $m$ be the single entry in the Gram matrix of the orthogonal complement of $L'$ in $L$. Suppose for the sake of contradiction that $L$ is not universal, and let $u$ be its truant. We can determine that $u$ is squarefree. By considering $u - xm$ where $x$ depends on $m$ modulo a certain number, we can find an upper bound for $u$. By manually checking $L$ represents all natural numbers below the upper bound, this shows $u$ cannot exist, so $L$ is universal.
+For most of the four-dimensional escalators $L$, we can prove that they are universal easily. We find a $3$-dimensional sublattice $L'$ that is unique in its genus and use local arguments to prove that $L'$ represents all but a certain set of numbers, using Siegel's theorem.
+For example, if $L'$ has Gram matrix $\begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bsmallmatrix}$, then $L'$ represents numbers that are not of the form $4^a b$, where $a \ge 0$ and $b \equiv 7 \pmod 8$. Let $m$ be the single entry in the Gram matrix of the orthogonal complement of $L'$ in $L$. Suppose for the sake of contradiction that $L$ is not universal, and let $u$ be its truant. We can determine that $u$ is squarefree. By considering $u - xm$ where $x$ depends on $m$ modulo a certain number, we can find an upper bound for $u$. By manually checking $L$ represents all natural numbers below the upper bound, this shows $u$ cannot exist, so $L$ is universal.
 
 As an example, let $L$ be an escalation of $L' = \begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bsmallmatrix}$, where the orthogonal complement of $L'$ in $L$ has Gram matrix with one entry $m$. Since $L'$ is unique in its genus, we may calculate the numbers represented by it using calculations over the completions of $\mathbb{Q}$. Hence, it represents everything but positive integers of the form $4^a (8b + 7)$, where $a$ and $b$ are nonnegative integers.
 
@@ -114,7 +115,9 @@ Many basic four-dimensional escalator lattices $L_4$ can be proven to be univers
 find a three-dimensional sublattice $L_3$ unique in its genus that represents a large set of integers, ensure $L_4$ is not exceptional over $L_3$, and use this to show $L_4$ is universal.
 
 However, more than $2300$ of the $6560$ basic four-dimensional escalator lattices cannot be proven to be universal using this method.
-Analytic and computational techniques are required. Utilizing modular forms, we may obtain a condition nearly as good as being unique in a genus: a quadratic form representing all numbers it locally represents with exceptions only up to a certain number.
+Instead, we use modular forms. For a quadratic form $Q$ in $n$ variables where $r_Q(m)$ denotes the number of ways $m$ can be represented by $Q$, we may create its Fourier series generating function
+\[\Theta_Q(z) = \sum_{m = 0}^{\infty} r_Q(m) e^{2\pi i m z},\]
+which turns out to be a weight-$n/2$ modular form. Through a detailed study of the properties of $\Theta_Q$, we find that a quadratic form represents all numbers it locally represents with exceptions only up to a certain number $N$, which can be shown to be relatively small.
 
 In the end, this separates all escalator lattices into three categories:
 \begin{itemize}
@@ -138,7 +141,9 @@ Miraculously, all $330$ auxiliary quaternaries are of type I, type II, or a new 
 \begin{itemize}
     \item Type IV: represents all integers that are not of the form $10n^2$ or $13n^2$.
 \end{itemize}
-It is easy to check that each auxiliary quaternary can be escalated only at most $4$ times, by calculation. We can easily show that each escalator of an auxiliary quaternary has truant equal to one of the critical numbers.
+It is easy to check that each auxiliary quaternary can be escalated only at most $3$ times, by calculation. We can easily show that each escalator of an auxiliary quaternary has truant equal to one of the critical numbers.
+
+Through inspection of each lattice, the zero lattice cannot be escalated more than $7$ times.
 
 This proves similar results as before. By considering chains of escalations within a lattice, all information about lattice universality is contained within the study of escalator lattices. Since all escalator lattices have truants that are critical numbers, the $290$-theorem is proved.
 
