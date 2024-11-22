@@ -51,10 +51,13 @@ We will prove the following theorem:
 \begin{thm}[The 15-Theorem]\label{15thm}
     A positive-definite integer-matrix quadratic form is universal (represents all positive integers) if and only if it represents the numbers 1, 2, 3, 5, 6, 7, 10, 14, and 15.
 \end{thm}
-In addition, each number in this list is necessary.
+In addition, each number in this list (called a \emph{critical number}) is necessary. More precisely,
+\begin{thm}
+    For each critical number $n$, there exists a positive-definite integer-matrix quadratic form representing all positive integers except $n$.
+\end{thm}
 A generalization is:
 \begin{thm}\label{15thmgeneral}
-    A positive-definite integer-matrix quadratic form represents 1, 2, 3, 5, 6, 7, 10, and 14 if and only if it represents all positive integers besides 15.
+    A positive-definite integer-matrix quadratic form representing all critical numbers besides $15$ must represent all positive integers besides $15$.
 \end{thm}
 By application of the Fifteen Theorem, we obtain the useful result that:
 \begin{thm}\label{universal 4d}
