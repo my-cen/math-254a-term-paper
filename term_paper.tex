@@ -7,6 +7,7 @@
 \usepackage{float}
 \usepackage{amsthm}
 \newtheorem{thm}{Theorem}
+\newtheorem{conj}{Conjecture}
 %\usepackage{tikz-cd}
 %\usepackage{xcolor}
 %\usepackage{url}
@@ -117,10 +118,10 @@ and
 These are not universal, with truants either $10$ or $15$. We may apply the same argument as above, but the final check that $L$ represents all positive integers up to some number fails with just one number. This shows that these $6$ lattices each miss that number and no others. That number is the lattice's truant, so the $5$-dimensional escalators of the lattice must be universal. This allows us to skip verifying every single one of the $1630$ five-dimensional escalators of these quadratic forms is universal.
 
 \subsection{Proof of theorems \ref{15thm}, \ref{15thmgeneral}, and \ref{universal 4d}}
-This shows all escalators of the zero lattice are at most $5$-dimensional, and that there are exactly $1850$ nonisomorphic escalator lattices of the zero lattice: $1$ of dimension $0$, $1$ of dimension $1$, $2$ of dimension $2$, $9$ of dimension $3$, $207$ of dimension $4$, and $1630$ of dimension $5$.
+This shows all escalators of the zero lattice are at most $5$-dimensional, and that there are exactly $1850$ nonisomorphic escalator lattices of the zero lattice: $1$ of dimension $0$, $1$ of dimension $1$, $2$ of dimension $2$, $9$ of dimension $3$, $207$ of dimension $4$, and $1630$ of dimension $5$. This also proves that a universal lattice $L$ must contain a universal sublattice of dimension $5$ or less, because $L$ must contain a chain of escalations of the zero lattice.
 
 \begin{proof}[Proof of the 15-Theorem]
-    One The non-universal escalators of $0$ we found have truants $1, 2, 3, 5, 6, 7, 10, 14$ and $15$. This proves the $15$-theorem, and that each of these numbers is actually necessary.
+    The non-universal escalators of $0$ we found have truants $1, 2, 3, 5, 6, 7, 10, 14$ and $15$, proving the $15$-theorem.
 \end{proof}
 \begin{proof}[Proof of Theorem \ref{critnumsneeded}]
     Let $n$ be a critical number. Let $L$ be a lattice with truant $n$. Then, by the four-square theorem,
@@ -131,9 +132,9 @@ This shows all escalators of the zero lattice are at most $5$-dimensional, and t
     Since each of the four escalators of the zero lattice that has truant $15$ is four-dimensional and hence must represent all other positive integers, the strengthening of the $15$-theorem is proved.
 \end{proof}
 
-The $15$-theorem has several corollaries. This also proves that a universal lattice $L$ must contain a universal sublattice of dimension $5$ or less, because $L$ must contain a chain of escalations of the zero lattice.
-
-In addition, this provides a shortcut to classifying all universal $4$-variable positive-definite integer-matrix quadratic forms. We find a bound on the discriminant of such a quadratic form and systematically apply the $15$-theorem to find there are exactly $204$ of them. This was used by Bhargava to determine that Willerding's classification of universal quaternary forms had errors.
+\begin{proof}[Proof of Theorem \ref{universal 4d}]
+The 15-theorem provides a shortcut to classifying all universal $4$-variable positive-definite integer-matrix quadratic forms. We find a bound on the discriminant of such a quadratic form and systematically apply the $15$-theorem in each case to find there are exactly $204$ of them. This was used by Bhargava to determine that Willerding's classification of universal quaternary forms had errors.
+\end{proof}
 
 \section{290-theorem}
 \subsection{Introduction and 3-dimensional escalators}
@@ -212,9 +213,37 @@ This proves similar results as before. Through inspection of each lattice, the z
     We use the same argument as for integer-matrix quadratic forms: finding a bound on the discriminant of such a quadratic form, then systematically applying the 15-theorem through each case.
 \end{proof}
 
-\section{blahblah}
+\section{Related results}
 
-The $33$- and $451$-theorem prove similar statements for odd universal integer-valued and integer-matrix quadratic forms, respectively. There have been various generalizations to quadratic forms representing prime numbers (insert reference here), numbers coprime to a certain prime (insert reference here), and more.
+\begin{table}[H]
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & Integer-Matrix & Integer-Valued \\ \hline
+        Universal & 15-theorem & 290-theorem \\
+        (all positive integers) && \\ \hline
+        Odd universal & 33-theorem & 451-theorem \\
+        (all odd positive integers) && \\ \hline
+        Coprime universal & Bounds by (reference)\\
+        (all positive integers && \\
+        coprime to a certain prime) && \\ \hline
+    \end{tabular}
+\end{table}
+\begin{conj}\label{451thmconj}
+    The three ternary quadratic forms
+    \begin{align*}
+        & x^2 + 2y^2 + 5z^2 + xz \\
+        & x^2 + 3y^2 + 6z^2 + xy + 2yz \\
+        & x^2 + 3y^2 + 7z^2 + xy + xz
+    \end{align*}
+    are odd universal (represent all positive odd integers).
+\end{conj}
+\begin{thm}[The 451-Theorem]
+    Assuming Conjecture \ref{451thmconj}, a positive-definite integer-valued quadratic form represents all positive \emph{odd} integers if and only if it represents the $46$ numbers
+    \[\text{This is a placeholder.}\]
+    For each of these numbers $n$, there exists a positive-definite integer-valued quadratic form representing all positive odd integers besides $n$. Also, a positive-definite integer-valued quadratic form representing each of the $46$ critical numbers besides $451$ must represent all positive odd integers besides $451$.
+\end{thm}
+
+The $33$- and $451$-theorem prove similar statements as the $15$- and $290$-theorems for odd universal integer-valued and integer-matrix quadratic forms, respectively. They use the same proof techniques and can be generalized in the same ways. However, the $451$-theorem relies on a couple of ternary quadratic forms being universal, which has not been proved yet. There have been various generalizations to quadratic forms representing prime numbers (insert reference here), numbers coprime to a certain prime (insert reference here), quadratic forms universal over algebraic number fields, and more.
 
 The source code for this term paper is at \url{https://github.com/my-cen/math-254a-term-paper/blob/main/math_254a_term_paper.ipynb}.
 
