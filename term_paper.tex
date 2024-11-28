@@ -48,48 +48,52 @@
 \maketitle
 
 \section{Introduction}
-We will prove the following theorem:
+In this paper, a ``quadratic form'' or ``lattice'' refers to one that is positive-definite and integer-matrix, unless otherwise specified. (``Integer-matrix'' means that when the quadratic form is represented as a symmetric matrix, all entries are integers. ``Integer-valued'' is a more lenient condition that allows off-diagonal entries to be half-integers.)
+
+In this term paper, we will prove the following four theorems:
 \begin{thm}[The 15-Theorem]\label{15thm}
-    A positive-definite integer-matrix quadratic form is universal (represents all positive integers) if and only if it represents the numbers
+    A quadratic form is universal (represents all positive integers) if and only if it represents the numbers
     \[1, 2, 3, 5, 6, 7, 10, 14, 15.\]
 \end{thm}
 In addition, each number in this list (called a \emph{critical number}) is necessary. More precisely,
 \begin{thm}\label{critnumsneeded}
-    For each critical number $n$, there exists a positive-definite integer-matrix quadratic form representing all positive integers except $n$.
+    For each critical number $n$, there exists a quadratic form representing all positive integers except $n$.
 \end{thm}
 A generalization is:
 \begin{thm}\label{15thmgeneral}
-    A positive-definite integer-matrix quadratic form representing all critical numbers besides $15$ must represent all positive integers besides $15$.
+    A quadratic form representing all critical numbers besides $15$ must represent all positive integers besides $15$.
 \end{thm}
 By application of the Fifteen Theorem, we obtain the useful result that:
 \begin{thm}\label{universal 4d}
-    There are exactly $204$ positive-definite integer-matrix 4-dimensional quadratic forms representing all positive integers.
+    There are exactly $204$ four-dimensional quadratic forms representing all positive integers.
 \end{thm}
-A similar result to the Fifteen Theorem is the 290-theorem:
+We will also show a sketch of the following related theorem:
 \begin{thm}[The 290-Theorem]
-    A positive-definite integer-valued quadratic form represents all positive integers if and only if it represents
+    A positive-definite \emph{integer-valued} quadratic form represents all positive integers if and only if it represents the twenty-nine numbers
     \[1, 2, 3, 5, 6, 7, 10, 13, 14, 15, 17, 19, 21, 22, 23, 26,\]
-    \[29, 30, 31, 34, 35, 37, 42, 58, 93, 110, 143, 203, 290.\]
+    \[29, 30, 31, 34, 35, 37, 42, 58, 93, 110, 145, 203, 290.\]
 \end{thm}
 Theorems \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d} have similar generalizations for integer-valued quadratic forms: there are 6436 universal positive-definite integer-valued four-dimensional quadratic forms representing all positive integers.
 
 These theorems have a long history, since the question of which quadratic forms are universal is simple to state but hard to completely solve.
-In the 17th century, Fermat proved the two-square theorem concerning the numbers represented by $x^2 + y^2$. In 1770, Lagrange proved the famous four-square theorem, which is equivalent to saying $x^2 + y^2 + z^2 + w^2$ is universal.
-Throughout the next few years, mathematicians proved many similar theorems regarding other universal quadratic forms, and Lagrange showed which numbers are represented by $x^2 + y^2 + z^2$.
+In the 17th century, Fermat proved the two-square theorem concerning the numbers represented by $x^2 + y^2$. In 1770, Lagrange proved the famous four-square theorem, which is equivalent to the statement that $x^2 + y^2 + z^2 + w^2$ is universal.
+Throughout the next few years, mathematicians proved many similar theorems regarding other universal quadratic forms, and Lagrange considered the numbers represented by $x^2 + y^2 + z^2$.
 
-It was only in the 20th century that people started looking at universal quadratic forms in general, rather than only specific examples. In 1916, Ramanujan gave a list of diagonal quaternary forms and claimed they were universal, which Dickson confirmed in 1927.
-Willerding then classified all universal integer-matrix quaternary forms.
+It was only in the 20th century that people started looking at universal quadratic forms in general, rather than only specific examples. In 1916, Ramanujan gave a list of universal diagonal quaternary quadratic forms and claimed that there were no others. This claim was confirmed by Dickson in 1927.
+Willerding then classified all universal quaternary forms.
 
 In 1993, Conway and Schneeberger announced the first proof of the $15$-theorem.
 The proof was extremely complex and required separately analyzing every single case, so it is unpublished.
-But in 2000, Bhargava \cite{fifteen} pioneered a new technique to prove the 15-theorem, using escalations of quadratic forms, a much simpler, more uniform method.  We will present this method in this paper. This also showed that Willerding had made a couple of errors.
+But in 2000, Bhargava \cite{fifteen} pioneered a new technique to prove the 15-theorem, using escalations of lattices, a much simpler, more uniform method.  We will present this method in this paper. This also showed that Willerding had made a couple of errors.
 In 2011, Bhargava and Hanke \cite{twoninety} used the same technique, combined with modular forms to deal with every case, to successfully prove the 290-theorem.
-Using a very similar technique, Rouse proved a ``451-theorem'' on integer-valued quadratic forms representing all odd positive integers in 2014. Research into generalizations is still done today.
+Using a very similar technique, Rouse proved a ``451-theorem'' on integer-valued quadratic forms representing all odd positive integers in 2014, assuming certain conjectures. Similar theorems have been proved for different sets of numbers to be represented.
 
 \section{Definitions}
-An integer-matrix quadratic form is one that has a symmetric Gram matrix with only integer values in it. There is a well-known natural bijection between lattices with integer inner products and positive-definite integer-matrix quadratic forms. For convenience, a lattice or quadratic form refers to a positive-definite integer-matrix lattice or quadratic form. A quadratic form or its corresponding lattice is called universal if it represents all positive integers. If it is not universal, its truant is the smallest positive integer not represented. An escalation of a lattice $L$ is the lattice generated by $L$ and a vector of norm equal to the truant of $L$. An escalator lattice is one reached from a series of escalations from the zero lattice. A quadratic form has integer matrix if its matrix has only integer entries, and it is integer valued if when expressed as a polynomial, all coefficients are integers.
+There is a well-known natural bijection between lattices with integer inner products and positive-definite integer-matrix quadratic forms, so any operation on a lattice can be applied to a quadratic form.
 
-\section{Proof of $15$-theorem}
+A quadratic form or its corresponding lattice is defined to be \emph{universal} if it represents all positive integers. If it is not universal, its \emph{truant} is defined to be the smallest positive integer not represented. An \emph{escalation} of a lattice $L$ is a lattice generated by $L$ and a vector of norm equal to the truant of $L$. An \emph{escalator lattice} is one reached from a series of escalations from the zero lattice.
+
+\section{Proof of the $15$-theorem}
 \subsection{Escalators of dimension $\le 3$}
 The only quadratic form in $0$ variables is $0$, with truant $1$. Its unique escalation is $x^2$ (equivalently $\begin{bmatrix} 1 \end{bmatrix}$ as a matrix) with truant $2$, hence further escalations of dimension $2$ must have Gram matrix of the form
 \[\begin{bmatrix} 1 & a \\ a & 2 \end{bmatrix}.\]
@@ -98,11 +102,16 @@ By Cauchy-Schwarz, $a$ is $0$ or $\pm 1$, creating two nonisomorphic escalations
 Their truants are $3$ and $5$, respectively. By a similar argument, we can compute the $9$ three-dimensional escalations: they have Minkowski-reduced Gram matrices
 \[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 3 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix},\]
 \[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 5 \end{bmatrix}.\]
-By computation, they have truants $7, 14, 6, 7, 10, 7, 14, 7, 10$. Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices; we will prove $201$ are universal and the other $6$ can be escalated again.
+By computation, they have truants $7, 14, 6, 7, 10, 7, 14, 7, 10$. Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices; we will prove exactly $201$ are universal.
 
 \subsection{Escalators of dimension $4$ and $5$}
-For most of the four-dimensional escalators $L$, we can prove that they are universal easily. We find a $3$-dimensional sublattice $L'$ that is unique in its genus and use local arguments to prove that $L'$ represents all but a certain set of numbers, using Siegel's theorem.
-For example, if $L'$ has Gram matrix $\begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bsmallmatrix}$, then $L'$ represents numbers that are not of the form $4^a b$, where $a \ge 0$ and $b \equiv 7 \pmod 8$. Let $m$ be the single entry in the Gram matrix of the orthogonal complement of $L'$ in $L$. Suppose for the sake of contradiction that $L$ is not universal, and let $u$ be its truant. We can determine that $u$ is squarefree. By considering $u - xm$ where $x$ depends on $m$ modulo a certain number, we can find an upper bound for $u$. By manually checking $L$ represents all natural numbers below the upper bound, this shows $u$ cannot exist, so $L$ is universal.
+For most of the four-dimensional escalators $L$, we can prove that they are universal easily.
+We find a $3$-dimensional sublattice $L'$ that is unique in its genus and use local arguments to prove that $L'$ represents all but a certain set of numbers, using Siegel's theorem.
+%For example, if $L'$ has Gram matrix $\begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bsmallmatrix}$, then $L'$ represents numbers that are not of the form $4^a b$, where $a \ge 0$ and $b \equiv 7 \pmod 8$.
+Let $m$ be the single entry in the Gram matrix of the orthogonal complement of $L'$ in $L$.
+Suppose for the sake of contradiction that $L$ is not universal, and let $u$ be its truant.
+We can determine that $u$ is squarefree. By considering $u - xm$ where $x$ depends on $m$ modulo a certain number, we can find an upper bound for $u$.
+By manually checking $L$ represents all natural numbers below the upper bound, this shows $u$ cannot exist, so $L$ is universal.
 
 As an example, let $L$ be an escalation of $L' = \begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bsmallmatrix}$, where the orthogonal complement of $L'$ in $L$ has Gram matrix with one entry $m$. Since $L'$ is unique in its genus, we may calculate the numbers represented by it using calculations over the completions of $\mathbb{Q}$. Hence, it represents everything but positive integers of the form $4^a (8b + 7)$, where $a$ and $b$ are nonnegative integers.
 
@@ -115,15 +124,15 @@ Suppose for the sake of contradiction that $L$ is not universal, and let its tru
 
 Therefore, either $u < 4m$ or $u - m$ or $u - 4m$ (depending on $m \pmod 8$) is represented by $L'$. Because $L = L' \oplus [m]$, if $u - m$ or $u - 4m$ is represented by $L'$, $u$ is represented by $L$. This is false by assumption. Hence, $u$ must be less than $4m$. By computation, $m \le 28$, so $u < 112 = 4 \cdot 28$. Now that we have bounded $u$, we use computer checks to show that $L$ represents all positive integers up to $112$. This shows $u$ did not exist in the first place, so $L$ is universal.
 
-By a similar argument, we find $201$ out of $207$ quaternary lattices are universal. There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
+By a similar argument, we find that most of the $207$ quaternary lattices are universal. There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
 \[L = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix}\]
-is the only one not unique in its genus, but it is ``nearly'' unique in its genus. Namely, it contains the lattice
-\[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 8 \end{bmatrix},\]
-which is unique in its genus, and it contains the two lattices
-\[\begin{bmatrix} 2 & -2 & 2 \\ -2 & 5 & 2 \\ 2 & 2 & 8 \end{bmatrix}, \begin{bmatrix} 3 & 0 & 0 \\ 0 & 5 & 4 \\ 0 & 4 & 5 \end{bmatrix}\]
-that together form a genus. The former genus represents all numbers locally represented by $L$ that are not congruent to $2, 3 \pmod 4$, and the latter genus is the same except the condition is replaced with being congruent to $1 \pmod 3$. By the Chinese Remainder Theorem, this makes $L$ represent all numbers it locally represents that are not $7$ or $10 \pmod{12}$. This condition is nearly as good as being unique in a genus, so we may apply essentially the same argument as before.
+is the only one not unique in its genus, but it is ``nearly'' unique in its genus. Namely, $L$ contains the lattice
+\[L' = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 8 \end{bmatrix},\]
+which is unique in its genus, and $L$ contains the two lattices
+\[L''_1 = \begin{bmatrix} 2 & -2 & 2 \\ -2 & 5 & 2 \\ 2 & 2 & 8 \end{bmatrix}, L''_2 = \begin{bmatrix} 3 & 0 & 0 \\ 0 & 5 & 4 \\ 0 & 4 & 5 \end{bmatrix}\]
+that together form a genus. The quadratic form $L'$ represents all numbers locally represented by $L'$ that are not congruent to $2, 3 \pmod 4$, and $L''_1, L''_2$ is the same except the condition is replaced with being congruent to $1 \pmod 3$. By the Chinese Remainder Theorem, this makes $L$ represent all numbers it locally represents that are not $7$ or $10 \pmod{12}$. This condition is nearly as good as being unique in a genus, so we may apply essentially the same argument as before.
 
-Exceptional four-dimensional lattices $L$ can usually still have the argument above apply by changing $L'$. There are only five cases when there are no $L'$ that make $L$ non-exceptional. In those cases, we find a unique-in-its-genus three-dimensional sublattice $L'$ and apply mostly the same argument.
+Exceptional four-dimensional lattices $L$ can usually still have the argument above apply by changing $L'$. There are only five cases when there are no $L'$ that make $L$ non-exceptional. In those cases, we find a three-dimensional sublattice $L'$ that is unique in its genus and apply mostly the same argument.
 
 The other $6$ four-dimensional lattices are
 \[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 3 & 0 \\ 0 & 1 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 5 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 5 & 0 \\ 0 & 0 & 0 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 2 \\ 0 & 1 & 2 & 8 \end{bmatrix},\]
@@ -155,11 +164,7 @@ The 15-theorem provides a shortcut to classifying all universal $4$-variable pos
 
 \section{290-theorem}
 \subsection{Introduction and 3-dimensional escalators}
-The $290$-theorem \cite{twoninety} states that an integer-\emph{valued} positive-definite quadratic form is universal if and only if it represents the $29$ critical numbers
-\[\begin{split}
-    &1,2,3,5,6,7,10,13,14,15,17,19,21,22,23,26,29,30, \\
-    &31,34,35,37,42,58,93,110,145,203,290,
-\end{split}\] %make sure the numbers are right
+The $290$-theorem \cite{twoninety} states that an integer-\emph{valued} positive-definite quadratic form is universal if and only if it represents the $29$ critical numbers listed earlier,
 and it has a similar strengthening as the $15$-theorem.
 The structure of the proof is mostly the same.
 In this section, a lattice will refer to an integer-\emph{valued} positive-definite lattice.

@@ -310,3 +310,4 @@ term_paper_sagemath.pdf
 .vscode
 .ipynb_checkpoints/term_paper_sagemath-checkpoint.ipynb
 moon_2008_term_paper.pdf
+.DS_Store
