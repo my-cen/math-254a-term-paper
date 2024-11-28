@@ -50,7 +50,8 @@
 \section{Introduction}
 We will prove the following theorem:
 \begin{thm}[The 15-Theorem]\label{15thm}
-    A positive-definite integer-matrix quadratic form is universal (represents all positive integers) if and only if it represents the numbers 1, 2, 3, 5, 6, 7, 10, 14, and 15.
+    A positive-definite integer-matrix quadratic form is universal (represents all positive integers) if and only if it represents the numbers
+    \[1, 2, 3, 5, 6, 7, 10, 14, 15.\]
 \end{thm}
 In addition, each number in this list (called a \emph{critical number}) is necessary. More precisely,
 \begin{thm}\label{critnumsneeded}
@@ -66,7 +67,9 @@ By application of the Fifteen Theorem, we obtain the useful result that:
 \end{thm}
 A similar result to the Fifteen Theorem is the 290-theorem:
 \begin{thm}[The 290-Theorem]
-    A positive-definite integer-valued quadratic form represents all positive integers if and only if it represents 1, 2, 3, 5, 6, 7, 10, 13, 14, 15, 17, 19, 21, 22, 23, 26, 29, 30, 31, 34, 35, 37, 42, 58, 93, 110, 143, 203, and 290.
+    A positive-definite integer-valued quadratic form represents all positive integers if and only if it represents
+    \[1, 2, 3, 5, 6, 7, 10, 13, 14, 15, 17, 19, 21, 22, 23, 26,\]
+    \[29, 30, 31, 34, 35, 37, 42, 58, 93, 110, 143, 203, 290.\]
 \end{thm}
 Theorems \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d} have similar generalizations for integer-valued quadratic forms: there are 6436 universal positive-definite integer-valued four-dimensional quadratic forms representing all positive integers.
 
@@ -123,10 +126,13 @@ that together form a genus. The former genus represents all numbers locally repr
 Exceptional four-dimensional lattices $L$ can usually still have the argument above apply by changing $L'$. There are only five cases when there are no $L'$ that make $L$ non-exceptional. In those cases, we find a unique-in-its-genus three-dimensional sublattice $L'$ and apply mostly the same argument.
 
 The other $6$ four-dimensional lattices are
-\[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 3 & 0 \\ 0 & 1 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 5 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 5 & 0 \\ 0 & 0 & 0 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 2 \\ 0 & 1 & 2 & 8 \end{bmatrix},\]
+\[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 3 & 0 \\ 0 & 1 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 5 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 5 & 0 \\ 0 & 0 & 0 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 2 \\ 0 & 1 & 2 & 8 \end{bmatrix},\]
 and
 \[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 1 \\ 0 & 1 & 1 & 9 \end{bmatrix}.\]
-These are not universal, with truants either $10$ or $15$. We may apply the same argument as above, but the final check that $L$ represents all positive integers up to some number fails with just one number. This shows that these $6$ lattices each miss that number and no others. That number is the lattice's truant, so the $5$-dimensional escalators of the lattice must be universal. This allows us to skip verifying every single one of the $1630$ five-dimensional escalators of these quadratic forms is universal.
+(The original paper appears to have a small mistake: the third matrix was written as
+\[\begin{bmatrix} 1&0&0&0 \\ 0&2&0&0 \\ 0&0&5&1 \\ 0&0&1&5\end{bmatrix}\]
+instead of what it should be.)
+These six $4$-dimensional escalators are not universal, with truants $10,10,15,15,15,15$. We may apply the same argument as above, but the final check that $L$ represents all positive integers up to some number fails with just one number. This shows that these $6$ lattices each miss that number and no others. That number is the lattice's truant, so the $5$-dimensional escalators of the lattice must be universal. This allows us to skip verifying every single one of the $1630$ five-dimensional escalators of these quadratic forms is universal.
 
 \subsection{Proof of theorems \ref{15thm}, \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d}}
 This shows all escalators of the zero lattice are at most $5$-dimensional, and that there are exactly $1850$ nonisomorphic escalator lattices of the zero lattice: $1$ of dimension $0$, $1$ of dimension $1$, $2$ of dimension $2$, $9$ of dimension $3$, $207$ of dimension $4$, and $1630$ of dimension $5$. This also proves that a universal lattice $L$ must contain a universal sublattice of dimension $5$ or less, because $L$ must contain a chain of escalations of the zero lattice.
@@ -166,9 +172,9 @@ Many basic four-dimensional escalator lattices $L_4$ can be proven to be univers
 find a three-dimensional sublattice $L_3$ unique in its genus that represents a large set of integers, ensure $L_4$ is not exceptional over $L_3$, and use this to show $L_4$ is universal.
 
 However, more than $2300$ of the $6560$ basic four-dimensional escalator lattices cannot be proven to be universal using this method.
-Instead, we use modular forms. For a quadratic form $Q$ in $n$ variables where $r_Q(m)$ denotes the number of ways $m$ can be represented by $Q$, we may create its Fourier series generating function
+Instead, we use modular forms to efficiently treat every one of these quadratic forms. For a quadratic form $Q$ in $n$ variables where $r_Q(m)$ denotes the number of ways $m$ can be represented by $Q$, we may create its Fourier series generating function
 \[\Theta_Q(z) = \sum_{m = 0}^{\infty} r_Q(m) e^{2\pi i m z},\]
-which turns out to be a weight-$n/2$ modular form. Through a detailed study of the properties of $\Theta_Q$, we find that a quadratic form represents all numbers it locally represents with exceptions only up to a certain number $N$, which can be shown to be relatively small.
+which turns out to be a weight-$n/2$ modular form. Through a detailed study of the properties of $\Theta_Q$ and several results on modular forms, we find that a quadratic form represents all numbers it locally represents with exceptions only up to a certain number $N$, which can be computed and is small enough. This is nearly the same as the previous condition of being unique in a genus.
 
 In the end, this separates all basic four-dimensional escalator lattices into three categories:
 \begin{itemize}
@@ -210,6 +216,12 @@ This proves similar results as before. Through inspection of each lattice, the z
     By considering chains of escalations within a lattice, all information about lattice universality is contained within the study of escalator lattices. Since all escalator lattices have truants that are critical numbers, the $290$-theorem is proved.
 \end{proof}
 
+\begin{proof}[Proof of theorem \ref{critnumsneeded} for integer-valued lattices]
+    Just like before, let $n$ be a critical number. We will construct a quadratic form representing all positive integers except $n$. Let $Q$ be a quadratic form of truant $n$ (it is easy to construct one for any $n$). Then,
+    \[Q \oplus [n + 1] \oplus [n + 1] \oplus [n + 1] \oplus [n + 1] \oplus [2n + 1]\]
+    must represent every positive integer below and above $n$, by Lagrange's four-square theorem.
+\end{proof}
+
 \begin{proof}[Proof of theorem \ref{15thmgeneral} for integer-valued lattices]
     We notice that all escalators of truant $290$ must be a sequence of escalations of
     \[\begin{bmatrix}
@@ -235,10 +247,11 @@ This proves similar results as before. Through inspection of each lattice, the z
         (all positive integers) && \\ \hline
         Odd universal & 33-theorem & 451-theorem \\
         (all odd positive integers) && \\ \hline
-        Coprime universal & Lists below \\
+        Coprime universal & Lists in table \ref{coprimeunivtable} & \\
         (all positive integers && \\
         coprime to a certain prime) && \\ \hline
     \end{tabular}
+    \caption{Theorems related to the 15-theorem}
 \end{table}
 \begin{conj}\label{451thmconj}
     The three ternary quadratic forms
@@ -261,11 +274,11 @@ This proves similar results as before. Through inspection of each lattice, the z
     \[1, 3, 5, 7, 11, 15, 33.\]
 \end{thm}
 
-The $451$-theorem uses the same proof technique as the $290$-theorem and can be generalized in the same way. It has a similar special case for integer-matrix quadratic forms, namely, the $33$-theorem. However, the $451$-theorem relies on a couple of ternary quadratic forms being universal, which has not been proved yet, although it is true under the Generalized Riemann Hypothesis. There have been various generalizations to quadratic forms representing prime numbers (insert reference here), numbers coprime to a certain prime \cite{coprimeuniv}, quadratic forms universal over algebraic number fields, and more.
+The $451$-theorem uses the same proof technique as the $290$-theorem and can be generalized in the same way. It has a similar special case for integer-matrix quadratic forms, namely, the $33$-theorem. However, the $451$-theorem relies on a couple of ternary quadratic forms being universal, which has not been proved yet, although it is true under the Generalized Riemann Hypothesis. There have been various generalizations to quadratic forms representing prime numbers \cite{primeuniversaloeis}, numbers coprime to a certain prime \cite{coprimeuniv}, and more. In fact, Bhargava has determined that for every set of positive integers $S$, there is a finite subset $T$ of critical numbers such that $S$ and $T$ obey a sort of 290- or 15-theorem.
 
 Recently, Matteo Bordignon and Giacomo Cherubini have proved a generalized version of these theorems, for quadratic forms representing all numbers coprime to a certain prime ($p$-coprime universal). Assuming the Generalized Riemann Hypothesis and if $S$ and $S_2$ denote the sets of critical numbers for the $290$-theorem annd $451$-theorem, the set of critical numbers for $p$-coprime universality is:
 \begin{table}[H]
-    \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|c|l|l|}
         $p$ & Integer-matrix critical numbers & Integer-valued \\ \hline
         $2$ & $S_2$ & 1, 3, 5, 7, 11, 15, 33 \\ \hline
         $3$ & $S \cup \{11, 38, 46, 47,$ &  1, 2, 5, 7, 10, 11, \\
@@ -276,6 +289,8 @@ Recently, Matteo Bordignon and Giacomo Cherubini have proved a generalized versi
         && 30, 31, 39, 55, 78 \\ \hline
         $\ge 11$ & $S - p\mathbb{Z}$ & Same as 15-theorem 
     \end{tabular}
+    \caption{Critical numbers for $p$-coprime universal quadratic forms}
+    \label{coprimeunivtable}
 \end{table}
 
 The source code for this term paper is at \url{https://github.com/my-cen/math-254a-term-paper/blob/main/math_254a_term_paper.ipynb}.
