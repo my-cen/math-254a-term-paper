@@ -1,5 +1,7 @@
 \documentclass[letterpaper, 12pt]{article}
 \usepackage{amsmath, amssymb, mathtools} % essentials
+\usepackage[margin=1in]{geometry}
+\renewcommand{\baselinestretch}{1.05}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{term_paper.bib}
 \nocite{*}
@@ -46,6 +48,12 @@
 \begin{document}
 
 \maketitle
+
+\begin{abstract}
+    We study the issue of determining whether a quadratic form represents all positive integers, which is solved by the 15- and 290-theorems. We prove the 15-theorem and a sketch of the 290-theorem using the pioneering technique in the original paper. The purpose of this paper is to have SageMath code for many of the computations within the proof, allowing minor computational errors in the original papers to be exposed. In addition, we discuss recent similar theorems about quadratic forms representing certain sets of numbers.
+\end{abstract}
+
+\tableofcontents
 
 \section{Introduction}
 In this paper, a ``quadratic form'' or ``lattice'' refers to one that is positive-definite and integer-matrix, unless otherwise specified. (``Integer-matrix'' means that when the quadratic form is represented as a symmetric matrix, all entries are integers. ``Integer-valued'' is a more lenient condition that allows off-diagonal entries to be half-integers.)
