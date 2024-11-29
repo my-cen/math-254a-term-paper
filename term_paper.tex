@@ -40,8 +40,8 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
-\title{Fall 2024 Math 254A Term Paper}
-\author{Mingyang Cen \\ Student ID: 3036462810 \\ Berkeley email address: \texttt{mcen@berkeley.edu}}
+\title{Bhargava's 15-Theorem and Its Generalizations: A Journey from Ramanujan to Conway and Bhargava\footnote{Fall 2024 Math 254A Term Paper}}
+\author{Mingyang Cen \\ Student ID: 3036462810 \\ Email address: \texttt{mcen@berkeley.edu}}
 
 \begin{document}
 
@@ -73,7 +73,7 @@ We will also show a sketch of the following related theorem:
     \[1, 2, 3, 5, 6, 7, 10, 13, 14, 15, 17, 19, 21, 22, 23, 26,\]
     \[29, 30, 31, 34, 35, 37, 42, 58, 93, 110, 145, 203, 290.\]
 \end{thm}
-Theorems \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d} have similar generalizations for integer-valued quadratic forms: there are 6436 universal positive-definite integer-valued four-dimensional quadratic forms representing all positive integers.
+Theorems \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d} have similar generalizations for integer-valued quadratic forms: there are 6436 universal positive-definite integer-valued four-dimensional quadratic forms representing all positive integers. I have coded SageMath code for many of the computations required.
 
 These theorems have a long history, since the question of which quadratic forms are universal is simple to state but hard to completely solve.
 In the 17th century, Fermat proved the two-square theorem concerning the numbers represented by $x^2 + y^2$. In 1770, Lagrange proved the famous four-square theorem, which is equivalent to the statement that $x^2 + y^2 + z^2 + w^2$ is universal.
@@ -138,9 +138,10 @@ The other $6$ four-dimensional lattices are
 \[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 3 & 0 \\ 0 & 1 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 5 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 5 & 0 \\ 0 & 0 & 0 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 2 \\ 0 & 1 & 2 & 8 \end{bmatrix},\]
 and
 \[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 1 \\ 0 & 1 & 1 & 9 \end{bmatrix}.\]
-(The original paper appears to have a small mistake: the third matrix was written as
-\[\begin{bmatrix} 1&0&0&0 \\ 0&2&0&0 \\ 0&0&5&1 \\ 0&0&1&5\end{bmatrix}\]
-instead of what it should be.)
+The original paper appears to have a small mistake: the third matrix was mistakenly written as
+\[\begin{bmatrix} 1&0&0&0 \\ 0&2&\fbox0&0 \\ 0&\fbox0&5&1 \\ 0&0&1&5\end{bmatrix}\]
+instead of
+\[\begin{bmatrix} 1&0&0&0 \\ 0&2&\fbox1&0 \\ 0&\fbox1&5&1 \\ 0&0&1&5\end{bmatrix}.\]
 These six $4$-dimensional escalators are not universal, with truants $10,10,15,15,15,15$. We may apply the same argument as above, but the final check that $L$ represents all positive integers up to some number fails with just one number. This shows that these $6$ lattices each miss that number and no others. That number is the lattice's truant, so the $5$-dimensional escalators of the lattice must be universal. This allows us to skip verifying every single one of the $1630$ five-dimensional escalators of these quadratic forms is universal.
 
 \subsection{Proof of theorems \ref{15thm}, \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d}}
@@ -298,7 +299,9 @@ Recently, Matteo Bordignon and Giacomo Cherubini have proved a generalized versi
     \label{coprimeunivtable}
 \end{table}
 
-The source code for this term paper is at \url{https://github.com/my-cen/math-254a-term-paper/blob/main/math_254a_term_paper.ipynb}.
+\section{Methodology}
+The source code for this term paper is at:\\\url{https://github.com/my-cen/math-254a-term-paper/blob/main/math_254a_term_paper.ipynb}.
+I have calculated the nonuniversal quaternary and ternary escalators, together with their truants, and found an error in the original paper for the list of $6$ nonuniversal quaternary escalators, mentioned above in section 3.2.
 
 \printbibliography
 
