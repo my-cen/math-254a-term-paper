@@ -127,10 +127,12 @@ By Cauchy-Schwarz, $a$ is $0$ or $\pm 1$, creating two nonisomorphic escalations
 Their truants are $3$ and $5$, respectively. By a similar argument, we can compute the $9$ three-dimensional escalations: they have Minkowski-reduced Gram matrices
 \[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 3 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix},\]
 \[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 5 \end{bmatrix}.\]
-By computation, they have truants $7, 14, 6, 7, 10, 7, 14, 7, 10$. Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices; we will prove exactly $201$ are universal.
+By computation, they have truants $7, 14, 6, 7, 10, 7, 14, 7, 10$. Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices. These 207 escalators are listed in my SageMath output. An important issue is to determine that the quaternary escalators either have truant in the critical numbers or are universal. We need to determine which of these 207 are universal and which are not, in order to continue.
 
 \subsection{Escalators of dimension $4$ and $5$}
-For most of the four-dimensional escalators $L$, we can prove that they are universal easily.
+By the end of this section, we will show that 201 of the 207 quaternary escalators are universal, and the other 6 have truant 10 or 15.
+
+Most of the four-dimensional escalators $L$ can be proven to be universal using the following argument.
 We find a $3$-dimensional sublattice $L'$ that is unique in its genus and use local arguments to prove that $L'$ represents all but a certain set of numbers, using the Hasse-Minkowski theorem. The Hasse-Minkowski theorem allows us to transition from local arguments over the $p$-adic numbers, where we can apply Hensel's lemma, to the integers.
 %For example, if $L'$ has Gram matrix $\begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bsmallmatrix}$, then $L'$ represents numbers that are not of the form $4^a b$, where $a \ge 0$ and $b \equiv 7 \pmod 8$.
 Let $m$ be the single entry in the Gram matrix of the orthogonal complement of $L'$ in $L$.
