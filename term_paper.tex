@@ -140,7 +140,7 @@ Suppose for the sake of contradiction that $L$ is not universal, and let $u$ be 
 We can determine that $u$ is squarefree. By considering $u - xm$ where $x$ depends on $m$ modulo a certain number, we can find an upper bound for $u$.
 By manually checking $L$ represents all natural numbers below the upper bound, this shows $u$ cannot exist, so $L$ is universal.
 
-As an example, let $L$ be an escalation of $L' = \begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bsmallmatrix}$, where the orthogonal complement of $L'$ in $L$ has Gram matrix with one entry $m$. Since $L'$ is unique in its genus, we may calculate the numbers represented by it using calculations over the completions of $\mathbb{Q}$. Hence, it represents everything but positive integers of the form $4^a (8b + 7)$, where $a$ and $b$ are nonnegative integers.
+As an example, let $L$ be an escalation of $L' = \begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bsmallmatrix}$, where the orthogonal complement of $L'$ in $L$ has Gram matrix with one entry $m$. Since $L'$ is unique in its genus, we may calculate the numbers represented by it using calculations over the completions of $\mathbb{Q}$. Over $\mathbb{Z}/8\mathbb{Z}$, $L'$ represents everything that is not $7$ modulo $8$. Over any odd prime $p$, for any $k \in \mathbb{Z}/p\mathbb{Z}$, we can use the following argument to show $L'$ represents $k$ modulo $p$. If $k/2$ denotes $k$ times the multiplicative inverse of $2$ in $\mathbb{Z}/p\mathbb{Z}$, then the sets $\{x^2 : x \in \mathbb{Z}/p\mathbb{Z}\}$ and $\{k/2 - y^2 : y \in \mathbb{Z}/p\mathbb{Z}\}$ each have cardinality $(p + 1)/2$. Hence, they must intersect, so there exist $x, y \in \mathbb{Z}/p\mathbb{Z}$ such that $k/2 \equiv x^2 + y^2 \pmod p$. Hence, $k \equiv 2x^2 + 2y^2 \pmod p$, proving $L'$ represents $k$ modulo $p$. Because of this, $L'$ represents everything but positive integers of the form $4^a (8b + 7)$, where $a$ and $b$ are nonnegative integers.
 
 Suppose for the sake of contradiction that $L$ is not universal, and let its truant be $u$. Since $L'$ cannot represent $u$, we can write $u$ in the form $4^a (8b + 7)$. Since $u$ is minimal, it is squarefree, so $a = 0$ and $u \equiv 7 \pmod 8$. We consider three cases depending on $m$ modulo $8$:
 \begin{itemize}
@@ -151,7 +151,8 @@ Suppose for the sake of contradiction that $L$ is not universal, and let its tru
 
 Therefore, either $u < 4m$ or $u - m$ or $u - 4m$ (depending on $m \pmod 8$) is represented by $L'$. Because $L = L' \oplus [m]$, if $u - m$ or $u - 4m$ is represented by $L'$, $u$ is represented by $L$. This is false by assumption. Hence, $u$ must be less than $4m$. By computation, $m \le 28$, so $u < 112 = 4 \cdot 28$. Now that we have bounded $u$, we use computer checks to show that $L$ represents all positive integers up to $112$. This shows $u$ did not exist in the first place, so $L$ is universal.
 
-By a similar argument, we find that most of the $207$ quaternary lattices are universal. There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
+By a similar argument, we find that most of the $207$ quaternary lattices are universal. The exact details are provided in Table 1. %make sure it actually exists
+There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
 \[L = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix}\]
 is the only one not unique in its genus.
 In general, dealing with a quadratic form like this is extremely difficult: for example, the odd numbers not represented by Ramanujan's ternary quadratic form $x^2 + y^2 + 10z^2$ do not have any predictable pattern \cite{OnoSoundararajan1997}.
