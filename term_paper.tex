@@ -1,6 +1,6 @@
 \documentclass[letterpaper, 12pt]{article}
 \usepackage{amsmath, amssymb, mathtools} % essentials
-\usepackage[margin=1in]{geometry}
+\usepackage[left=1in,right=1in,top=1in,bottom=1.5in]{geometry}
 \renewcommand{\baselinestretch}{1.1}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{term_paper.bib}
@@ -50,56 +50,68 @@
 \maketitle
 
 \begin{abstract}
-    We study the issue of determining whether a quadratic form represents all positive integers, which is solved by Bhargava and Hanke's 15-Theorem and 290-Theorem. We prove the 15-Theorem and a sketch of the 290-Theorem using the pioneering technique in the original paper. The purpose of this paper is to analyze the original papers and formulate SageMath code for many of the computations within the proof, correcting some minor computational errors which do not affect the conclusions of the original papers. In addition, we discuss recent similar theorems about quadratic forms representing certain sets of numbers.
+    We study the issue of determining whether a quadratic form represents all positive integers, which is solved by Bhargava and Hanke's 15-Theorem and 290-Theorem. We prove the 15-Theorem and a sketch of the 290-Theorem using the pioneering technique in the original paper. The purpose of this paper is to analyze the original papers and formulate SageMath code for many of the computations within the proof, correcting a possible minor computational error which does not affect the conclusions of the original papers. In addition, we discuss recent similar theorems about quadratic forms representing certain sets of numbers.
 \end{abstract}
 
 \tableofcontents
 
 \section{Introduction}
-In this paper, a ``quadratic form'' or ``lattice'' refers to one that is positive-definite and integer-matrix, unless otherwise specified. (``Integer-matrix'' means that when the quadratic form is represented as a symmetric matrix, all entries are integers. ``Integer-valued'' is a more lenient condition that allows off-diagonal entries to be half-integers.)
+In this paper, a ``quadratic form'' or ``lattice'' refers to one that is positive-definite and integer-matrix, unless otherwise specified. ``Integer-matrix'' means that when the quadratic form is represented as a symmetric matrix, all entries are integers. ``Integer-valued'' is a more lenient condition that allows off-diagonal entries to be half-integers.
 
 A quadratic form is considered to be \emph{universal} if it represents all positive integers.
 %
 %These theorems have a long history, since the question of which quadratic forms are universal is simple to state but hard to completely solve.
 %In the 17th century, Fermat proved the two-square theorem concerning the numbers represented by $x^2 + y^2$.
-In 1770, Lagrange proved the famous four-square theorem, which is equivalent to the statement that $x^2 + y^2 + z^2 + w^2$ is universal.
-Throughout the next few years, mathematicians proved many similar theorems regarding other universal quadratic forms, and Lagrange considered the numbers represented by $x^2 + y^2 + z^2$.
+In 1770, Lagrange \cite{LagrangeFourSquareTheorem} proved his famous four-square theorem, which is equivalent to the statement that $x^2 + y^2 + z^2 + w^2$ is universal. Legendre considered the numbers represented by $x^2 + y^2 + z^2$. During the nineteenth century, Gauss's concept of genus and Hensel's $p$-adic numbers were invented, two crucial tools in the proof. Together, this allows us to show a ternary quadratic form represents a large set of numbers: we only have to look at how it behaves over each ring of $p$-adic integers $\mathbb{Z}_p$.
 
-It was only in the 20th century that people started looking at universal quadratic forms in general, rather than only specific examples. In 1916, Ramanujan gave a list of universal diagonal quaternary quadratic forms and claimed that there were no others. This claim was confirmed by Dickson in 1927.
-Willerding then classified all universal quaternary forms.
+In 1916, Ramanujan \cite{ramanujan1916diagonal} gave a list of universal diagonal quaternary quadratic forms and claimed that there were no others. This claim was confirmed by Dickson \cite{Dickson1927} in 1927. This motivated research on finding a complete classification of universal quadratic forms.
+Willerding \cite{willerding1947} claimed to solve the problem of the universal four-dimensional case, finding 178 quadratic forms.
 
-In 1993, Conway and Schneeberger announced the first proof of the $15$-Theorem, a theorem giving a full criterion for a quadratic form to be universal.
-The proof was extremely complex and required separately analyzing every single case, so it is unpublished.
+In 1993, Conway and Schneeberger announced the first proof of the $15$-Theorem, a theorem giving a full criterion for a quadratic form to be universal. This also provided a shortcut to finding all universal quaternaries, showing Willerding had made a couple of mistakes. There are in fact 204 universal quaternaries.
+The proof of the 15-theorem was extremely complex and required separately analyzing every single case, so it is unpublished.
 But in 2000, Bhargava \cite{fifteen} pioneered a new technique to prove the 15-Theorem, using escalations of lattices, a much simpler, more uniform method.  We will present this method in this paper. This also showed that Willerding had made a couple of errors.
 
 In 2011, Bhargava and Hanke \cite{twoninety} used the same technique, combined with modular forms to deal with every case, to successfully prove the 290-Theorem, a similar result on integer-valued quadratic forms.
-Using a very similar technique, Rouse proved a ``451-Theorem'' on integer-valued quadratic forms representing all odd positive integers in 2014, assuming certain conjectures. Similar theorems have been proved for different sets of numbers to be represented.
+Using a very similar technique, Rouse proved a ``451-Theorem'' \cite{451} on integer-valued quadratic forms representing all odd positive integers in 2014, assuming certain conjectures. Similar theorems have been proved for different sets of numbers to be represented.
 
 \section{Statements of the Theorems}
-In this term paper, we will prove Theorems \ref{15thm}, \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d} from \cite{fifteen} and give a sketch of \ref{290thm} from \cite{twoninety}
+In this term paper, we will prove the 15-Theorem and its associated corollaries from \cite{fifteen}, and give a sketch of the 290-Theorem with its corollaries from \cite{twoninety}. Proofs will be given in the next two sections.
+
+\subsection{The 15-Theorem and Related Results}
 \begin{thm}[The 15-Theorem]\label{15thm}
-    A quadratic form is universal (represents all positive integers) if and only if it represents the numbers
+    A quadratic form is universal (represents all positive integers) if and only if it represents the nine numbers
     \[1, 2, 3, 5, 6, 7, 10, 14, 15.\]
 \end{thm}
-In addition, each number in this list (called a \emph{critical number}) is necessary. More precisely,
+Each number here (called a \emph{critical number}) is necessary because of the following result:
 \begin{thm}\label{critnumsneeded}
     For each critical number $n$, there exists a quadratic form representing all positive integers except $n$.
 \end{thm}
-A generalization is:
+The number 15 is special in this theorem since:
 \begin{thm}\label{15thmgeneral}
     A quadratic form representing all critical numbers besides $15$ must represent all positive integers besides $15$.
 \end{thm}
-By application of the Fifteen Theorem, we obtain the useful result that:
+By application of the 15-Theorem, we easily obtain an extremely useful classification of universal four-dimensional quadratic forms:
 \begin{thm}\label{universal 4d}
-    There are exactly $204$ four-dimensional quadratic forms representing all positive integers.
+    There are exactly $204$ non-isomorphic four-dimensional quadratic forms representing all positive integers.
 \end{thm}
 
+\subsection{The 290-Theorem and Related Results}
 \begin{thm}[The 290-Theorem]\label{290thm}
     A positive-definite \emph{integer-valued} quadratic form represents all positive integers if and only if it represents the twenty-nine numbers
     \[1, 2, 3, 5, 6, 7, 10, 13, 14, 15, 17, 19, 21, 22, 23, 26,\]
     \[29, 30, 31, 34, 35, 37, 42, 58, 93, 110, 145, 203, 290.\]
 \end{thm}
-Theorems \ref{critnumsneeded}, \ref{15thmgeneral}, and \ref{universal 4d} have similar generalizations for integer-valued quadratic forms: there are 6436 universal positive-definite integer-valued four-dimensional quadratic forms representing all positive integers. I have coded SageMath code for many of the computations required.
+The 290-Theorem appears to be similar to the 15-Theorem, and the proof has the same structure. However, the weakened condition of being integer-valued vastly increases the number of cases that must be considered. Because of this, the 290-Theorem requires several analytic results on modular forms for the proof.
+Similar generalizations of theorems 2, 3, and 4 are:
+\begin{thm}\label{290critnumsneeded}
+    For each critical number $n$ in the $290$-theorem, there exists an integer-valued quadratic form representing all positive integers except $n$.
+\end{thm}
+\begin{thm}\label{290thmgeneral}
+    An integer-valued quadratic form representing all critical numbers besides $290$ must represent all positive integers besides $290$.
+\end{thm}
+\begin{thm}\label{290 universal 4d}
+    There are exactly $6436$  non-isomorphic four-dimensional integer-valued quadratic forms representing all positive integers.
+\end{thm}
 
 \section{Definitions}
 There is a well-known natural bijection between lattices with integer inner products and positive-definite integer-matrix quadratic forms, so any operation on a lattice can be applied to a quadratic form.
