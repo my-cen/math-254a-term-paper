@@ -131,7 +131,7 @@ By computation, they have truants $7, 14, 6, 7, 10, 7, 14, 7, 10$. Escalating ag
 
 \subsection{Escalators of dimension $4$ and $5$}
 For most of the four-dimensional escalators $L$, we can prove that they are universal easily.
-We find a $3$-dimensional sublattice $L'$ that is unique in its genus and use local arguments to prove that $L'$ represents all but a certain set of numbers, using Siegel's theorem.
+We find a $3$-dimensional sublattice $L'$ that is unique in its genus and use local arguments to prove that $L'$ represents all but a certain set of numbers, using the Hasse-Minkowski theorem. The Hasse-Minkowski theorem allows us to transition from local arguments over the $p$-adic numbers, where we can apply Hensel's lemma, to the integers.
 %For example, if $L'$ has Gram matrix $\begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bsmallmatrix}$, then $L'$ represents numbers that are not of the form $4^a b$, where $a \ge 0$ and $b \equiv 7 \pmod 8$.
 Let $m$ be the single entry in the Gram matrix of the orthogonal complement of $L'$ in $L$.
 Suppose for the sake of contradiction that $L$ is not universal, and let $u$ be its truant.
@@ -151,7 +151,9 @@ Therefore, either $u < 4m$ or $u - m$ or $u - 4m$ (depending on $m \pmod 8$) is 
 
 By a similar argument, we find that most of the $207$ quaternary lattices are universal. There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
 \[L = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix}\]
-is the only one not unique in its genus, but it is ``nearly'' unique in its genus. Namely, $L$ contains the lattice
+is the only one not unique in its genus.
+In general, dealing with a quadratic form like this is extremely difficult: for example, the odd numbers not represented by Ramanujan's ternary quadratic form $x^2 + y^2 + 10z^2$ do not have any predictable pattern \cite{OnoSoundararajan1997}.
+but it is ``nearly'' unique in its genus. Luckily in our case, $L$ contains the lattice
 \[L' = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 8 \end{bmatrix},\]
 which is unique in its genus, and $L$ contains the two lattices
 \[L''_1 = \begin{bmatrix} 2 & -2 & 2 \\ -2 & 5 & 2 \\ 2 & 2 & 8 \end{bmatrix}, L''_2 = \begin{bmatrix} 3 & 0 & 0 \\ 0 & 5 & 4 \\ 0 & 4 & 5 \end{bmatrix}\]
