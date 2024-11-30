@@ -129,7 +129,7 @@ Their truants are $3$ and $5$, respectively. By a similar argument, we can compu
 \[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 5 \end{bmatrix}.\]
 By computation, they have truants $7, 14, 6, 7, 10, 7, 14, 7, 10$. Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices. These 207 escalators are listed in my SageMath output. An important issue is to determine that the quaternary escalators either have truant in the critical numbers or are universal. We need to determine which of these 207 are universal and which are not, in order to continue.
 
-\subsection{Escalators of dimension $4$ and $5$}
+\subsection{Escalators of dimension 4}
 By the end of this section, we will show that 201 of the 207 quaternary escalators are universal, and the other 6 have truant 10 or 15.
 
 Most of the four-dimensional escalators $L$ can be proven to be universal using the following argument.
@@ -152,6 +152,8 @@ Suppose for the sake of contradiction that $L$ is not universal, and let its tru
 Therefore, either $u < 4m$ or $u - m$ or $u - 4m$ (depending on $m \pmod 8$) is represented by $L'$. Because $L = L' \oplus [m]$, if $u - m$ or $u - 4m$ is represented by $L'$, $u$ is represented by $L$. This is false by assumption. Hence, $u$ must be less than $4m$. By computation, $m \le 28$, so $u < 112 = 4 \cdot 28$. Now that we have bounded $u$, we use computer checks to show that $L$ represents all positive integers up to $112$. This shows $u$ did not exist in the first place, so $L$ is universal.
 
 By a similar argument, we find that most of the $207$ quaternary lattices are universal. The exact details are provided in Table 1. %make sure it actually exists
+
+\subsection{Special cases for certain matrices}\label{section:specialmatrices}
 There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
 \[L = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix}\]
 is the only one not unique in its genus.
@@ -164,7 +166,8 @@ that together form a genus. The quadratic form $L'$ represents all numbers local
 
 Exceptional four-dimensional lattices $L$ can usually still have the argument above apply by changing $L'$. There are only five cases when there are no $L'$ that make $L$ non-exceptional. In those cases, we find a three-dimensional sublattice $L'$ that is unique in its genus and apply mostly the same argument.
 
-The other $6$ four-dimensional lattices are
+\subsection{Escalators of dimension 5}
+The other $6$ four-dimensional escalators are
 \[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 3 & 0 \\ 0 & 1 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 5 & 1 \\ 0 & 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 5 & 0 \\ 0 & 0 & 0 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 2 \\ 0 & 1 & 2 & 8 \end{bmatrix},\]
 and
 \[\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 5 & 1 \\ 0 & 1 & 1 & 9 \end{bmatrix}.\]
@@ -331,7 +334,7 @@ Recently, Matteo Bordignon and Giacomo Cherubini have proved a generalized versi
 
 \section{Methodology}
 The source code for this term paper is at:\\\url{https://github.com/my-cen/math-254a-term-paper/blob/main/math_254a_term_paper.ipynb}.
-I have calculated the nonuniversal quaternary and ternary escalators, together with their truants, and found an error in the original paper for the list of $6$ nonuniversal quaternary escalators, mentioned above in section 3.2.
+I have calculated the nonuniversal quaternary and ternary escalators, together with their truants, and found an error in the original paper for the list of $6$ nonuniversal quaternary escalators, mentioned above in section \ref{section:specialmatrices}
 
 \printbibliography
 
