@@ -42,7 +42,7 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
-\title{Bhargava's 15-Theorem and Its Generalizations: A Journey from Ramanujan to Conway and Bhargava\footnote{Fall 2024 Math 254A Term Paper}}
+\title{15-Theorem and Its Generalizations: A Journey from Ramanujan to Conway and Bhargava\footnote{Fall 2024 Math 254A Term Paper}}
 \author{Mingyang Cen \\ Student ID: 3036462810 \\ Email address: \texttt{mcen@berkeley.edu}}
 
 \begin{document}
@@ -337,7 +337,26 @@ Recently, Matteo Bordignon and Giacomo Cherubini have proved a generalized versi
 
 \section{Methodology}
 The source code for this term paper is at:\\\url{https://github.com/my-cen/math-254a-term-paper/blob/main/math_254a_term_paper.ipynb}.
-I have calculated the nonuniversal quaternary and ternary escalators, together with their truants, and found an error in the original paper for the list of $6$ nonuniversal quaternary escalators, mentioned above in section \ref{section:5 dim escalators}
+I have calculated the nonuniversal quaternary and ternary escalators, together with their truants, and found an error in the original paper for the list of $6$ nonuniversal quaternary escalators, mentioned above in section \ref{section:5 dim escalators}. Pseudocode:
+\begin{verbatim}
+def truant(quadratic form):
+    Let L be the empty list
+    For all tuples of numbers where each number is between -6 and 6 (by the 15 theorem this is all we need to check), add the quadratic form applied to the tuple to L
+    For i in 1---15, if i is not in L, return i
+    If all i from 1 to 15 are in L, return +infinity.
+\end{verbatim}
+
+Code for determining all nonuniversal quaternary escalators:
+\begin{verbatim}
+Let M be the list of all quaternary escalators.
+Let N be an empty list.
+For each quadratic form Q in M:
+    Let a be the truant of Q.
+    If a is finite:
+        Add Q to N.
+        Print out a and Q.
+\end{verbatim}
+
 
 \printbibliography
 
