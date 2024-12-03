@@ -1,0 +1,121 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{amsmath, amssymb, mathtools} % essentials
+\usepackage[left=1in,right=1in,top=1in,bottom=1.5in]{geometry}
+\renewcommand{\baselinestretch}{1.1}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{amsthm}
+\newtheorem{thm}{Theorem}
+\newtheorem{conj}{Conjecture}
+%\usepackage{tikz-cd}
+%\usepackage{xcolor}
+%\usepackage{url}
+%\usepackage{graphicx}
+%\graphicspath{{./}}
+%\usepackage{enumitem}
+%\usepackage{comment}
+
+% convenience names
+\newcommand{\nequiv}{\not\equiv}
+\newcommand{\nsubset}{\not\subset}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\xto}{\xrightarrow}
+\newcommand{\injto}{\hookrightarrow}
+\newcommand{\surjto}{\twoheadrightarrow}
+
+\newcommand{\diff}{\mathop{}\!d} % as in $\int e^x \diff x$
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\DeclareMathOperator{\Cl}{Cl} % ideal class group
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Stab}{Stab}
+
+% code from https://tex.stackexchange.com/a/2610/223981 that fixes a spacing issue with \left\right
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+\title{15-Theorem and Its Generalizations: A Journey from Ramanujan to Conway and Bhargava\footnote{Fall 2024 Math 254A Term Paper}: Presentation Edition}
+\author{Mingyang Cen \\ Student ID: 3036462810 \\ Email address: \texttt{mcen@berkeley.edu}}
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%    We study the issue of determining whether a quadratic form represents all positive integers, which is solved by Bhargava and Hanke's 15-Theorem and 290-Theorem. We prove the 15-Theorem and a sketch of the 290-Theorem using the pioneering technique in the original paper. The purpose of this paper is to analyze the original papers, add details in some places, and formulate SageMath code for many of the computations within the proof, correcting a possible minor computational error which does not affect the conclusions of the original papers. In addition, we discuss recent similar theorems about quadratic forms representing certain sets of numbers.
+%\end{abstract}
+
+%\tableofcontents
+
+\section{Introduction}
+Lagrange's famous four-square theorem states that the quadratic form $x^2+y^2+z^2+w^2$ represents all natural numbers. One may wonder which other quadratic forms have this property of representing all natural numbers, which we will call ``universality.'' A solution is provided by the 15-Theorem and 290-Theorem, which I will discuss in this talk.
+
+For a quadratic form, ``integer-matrix'' means that when the quadratic form is represented as a symmetric matrix, all entries are integers. ``Integer-valued'' is a more lenient condition that allows off-diagonal entries to be half-integers. A positive-definite integer-valued quadratic form is called universal if it represents all natural numbers.
+
+The 15-Theorem states that a positive-definite integer-valued quadratic form (which I will refer to as simply a quadratic form from now on) represents all positive integers exactly when it represents 1, 2, 3, 5, 6, 7, 10, 14, and 15. These nine numbers are called critical numbers.
+
+The number 15 is special in this theorem since, in fact,
+a quadratic form representing all critical numbers besides $15$ must represent all positive integers besides $15$.
+Also, by application of the 15-Theorem, we easily obtain an extremely useful classification of universal four-dimensional quadratic forms, namely, that there are exactly $204$ non-isomorphic four-dimensional quadratic forms representing all positive integers.
+
+The 290-Theorem states the same thing as the 15-Theorem, except we allow integer-valued quadratic forms, and the critical numbers are enlarged to a set of 29 numbers, up to 290.
+The 290-Theorem appears to be similar to the 15-Theorem, and the proof has the same structure. However, the weakened condition of being integer-valued vastly increases the number of cases that must be considered. Because of this, the 290-Theorem requires several analytic results on modular forms for the proof, so I will not present it today.
+Similar generalizations of the other theorems exist for the integer-valued case.
+
+A quadratic form is considered to be \emph{universal} if it represents all positive integers.
+Interest in universal quadratic forms began as early as 1770, when Lagrange proved his famous four-square theorem, which is equivalent to the statement that $x^2 + y^2 + z^2 + w^2$ is universal.
+
+In 1993, Conway and Schneeberger announced the first proof of the $15$-Theorem, a theorem giving a full criterion for a quadratic form to be universal. This also provided a shortcut to finding all universal quaternaries, showing there are 204 universal quaternaries.
+The proof of the 15-theorem was extremely complex and required separately analyzing every single case, so it is unpublished.
+
+But in 2000, Bhargava pioneered a new technique to prove the 15-Theorem, using escalations of lattices, a much simpler, more uniform method.  We will present this method in this paper. This also showed that Willerding had made a couple of errors.
+
+In 2011, Bhargava and Hanke used the same technique, combined with modular forms to deal with every case, to successfully prove the 290-Theorem, a similar result on integer-valued quadratic forms.
+Using a very similar technique, Rouse proved a ``451-Theorem'' on integer-valued quadratic forms representing all odd positive integers in 2014, assuming certain conjectures. Similar theorems have been proved for different sets of numbers to be represented.
+
+I have created SageMath code for some computations required for the 15-theorem.
+
+%The purpose of this paper is to analyze the original papers and add details for the calculations in some places. In addition, we formulate SageMath code for many of the computations within the proof, correcting a possible minor computational error which does not affect the conclusions of the original papers. We will discuss recent similar theorems about quadratic forms representing certain sets of numbers.
+
+\section{Definitions}
+There is a well-known natural bijection between lattices with integer inner products and positive-definite integer-matrix quadratic forms, so any operation on a lattice can be applied to a quadratic form.
+
+I will present several important pieces of machinery for the proof. A quadratic form or its corresponding lattice is defined to be \emph{universal} if it represents all positive integers. If it is not universal, its \emph{truant} is defined to be the smallest positive integer not represented. An \emph{escalation} of a lattice $L$ is a lattice generated by $L$ and a vector of norm equal to the truant of $L$. An \emph{escalator lattice} is one reached from a series of escalations from the zero lattice.
+
+\section{Proof of the $15$-Theorem}
+\subsection{Escalators of dimension $\le 3$}
+Through computation, there are 9 three-dimensional escalators.
+Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices. These 207 escalators are listed in Appendix A, Table 3. An important issue is to determine that the quaternary escalators either have truant in the critical numbers or are universal. We need to determine which of these 207 are universal and which are not, in order to continue.
+
+\subsection{Escalators of dimension 4}
+We want to show 201 of the 207 quaternary escalators are universal, and the other 6 have truants 10 or 15.
+
+As an illustrative example for the argument for the 201 universal quaternaries, let $L$ be an escalation of $L' = \begin{bsmallmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bsmallmatrix}$, where the orthogonal complement of $L'$ in $L$ has Gram matrix with one entry $m$. Since $L'$ is unique in its genus, we may apply Hasse-Minkowski to calculate the numbers represented by it using calculations over the completions of $\mathbb{Q}$. Through some application of Hensel's lemma, $L'$ represents everything but positive integers of the form $4^a (8b + 7)$, where $a$ and $b$ are nonnegative integers.
+
+Suppose for the sake of contradiction that $L$ is not universal, and let its truant be $u$. Since $L'$ cannot represent $u$, we can write $u$ in the form $4^a (8b + 7)$. Since $u$ is minimal, it is squarefree, so $a = 0$ and $u \equiv 7 \pmod 8$. We consider three cases depending on $m$ modulo $8$:
+\begin{itemize}
+    \item If $m$ is not congruent to $0$, $3$, or $7$ modulo $8$, then $u-m$ cannot be of the form $4^a (8b + 7)$.
+    \item If $m \equiv 3, 7 \pmod 8$, then $u-4m$ cannot be of the form $4^a (8b + 7)$ either.
+    \item If $m \equiv 0 \pmod 8$, then $L$ is called exceptional, and we have to use a different $L'$. More details are provided later in this paper.
+\end{itemize}
+
+Therefore, either $u < 4m$ or $u - m$ or $u - 4m$ (depending on $m \pmod 8$) is represented by $L'$. Because $L = L' \oplus [m]$, if $u - m$ or $u - 4m$ is represented by $L'$, $u$ is represented by $L$. This is false by assumption. Hence, $u$ must be less than $4m$. By computation, $m \le 28$, so $u < 112 = 4 \cdot 28$. Now that we have bounded $u$, we use computer checks to show that $L$ represents all positive integers up to $112$. This shows $u$ did not exist in the first place, so $L$ is universal.
+
+There are a few special cases where a slightly modified argument must be applied, but in the end, 201 quaternary escalators are shown to be universal.
+
+\subsection{Escalators of dimension 5}\label{section:5 dim escalators}
+The $6$ nonuniversal four-dimensional escalators have truants $10,10,15,15,15,15$. These six matrices are also listed in Appendix A, Table 4. It is impractical to consider every single one of the 1630 five-dimensional escalators, but we have a trick. We may apply the same argument as above, but the final check that $L$ represents all positive integers up to some number fails with just one number. This shows that these $6$ lattices each miss that number and no others. That number is the lattice's truant, so the $5$-dimensional escalators of the lattice must be universal. This finishes our analysis of escalators.
+
+For every quadratic form $Q$ representing each critical number, there exists an escalator within $Q$ containing every critical number. Through analysis of the escalators, we find that the escalator within $Q$ is in fact universal. Hence, $Q$ is universal, proving the 15-theorem.
+
+The 15-Theorem also provides a shortcut to classifying all universal $4$-variable positive-definite integer-matrix quadratic forms. We find a bound on the discriminant of such a quadratic form and systematically apply the $15$-Theorem in each case to find there are exactly $204$ of them.
+
+\section{Related results}
+Several generalizations of the 15-Theorem and the 290-Theorem exist: to quadratic forms representing odd numbers, prime numbers, numbers coprime to a certain number, etc.
+
+\end{document}
