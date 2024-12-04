@@ -61,16 +61,6 @@ The 290-Theorem states the same thing as the 15-Theorem, except we allow integer
 The 290-Theorem appears to be similar to the 15-Theorem, and the proof has the same structure. However, the weakened condition of being integer-valued vastly increases the number of cases that must be considered. Because of this, the 290-Theorem requires several analytic results on modular forms for the proof, so I will not present it today.
 There is a similar classification of universal four-dimensional integer-valued quadratic forms.
 
-Interest in universal quadratic forms began as early as 1770, when Lagrange proved his famous four-square theorem, which is equivalent to the statement that $x^2 + y^2 + z^2 + w^2$ is universal.
-
-In 1993, Conway and Schneeberger announced the first proof of the $15$-Theorem, a theorem giving a full criterion for a quadratic form to be universal.
-The original proof of the 15-theorem was extremely complex and required separately analyzing every single case, so it is unpublished.
-
-But in 2000, Bhargava pioneered a new technique to prove the 15-Theorem, using escalations of lattices, a much simpler, more uniform method, that I will present in this talk.
-
-In 2011, Bhargava and Hanke used the same technique, combined with several results on modular forms, to successfully prove the 290-Theorem, a similar result on integer-valued quadratic forms.
-Using a very similar technique, Rouse proved a ``451-Theorem'' on integer-valued quadratic forms representing all odd positive integers in 2014, assuming certain conjectures. Similar theorems have been proved for different sets of numbers to be represented.
-
 I have created SageMath code for some computations required for the 15-theorem.
 
 \section{Definitions}
@@ -107,7 +97,6 @@ For every quadratic form $Q$ representing each critical number, there exists an 
 The 15-Theorem also provides a shortcut to classifying all universal $4$-variable positive-definite integer-matrix quadratic forms. We find a bound on the discriminant of such a quadratic form and systematically apply the $15$-Theorem in each case to find there are exactly $204$ non-isomorphic universal quaternaries.
 
 \section{Related results}
-The 290-Theorem is a similar statement a
 
 Several generalizations of the 15-Theorem and the 290-Theorem exist: to quadratic forms representing odd numbers, prime numbers, numbers coprime to a certain number, etc.
 
