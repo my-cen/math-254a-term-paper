@@ -4,12 +4,21 @@
 \renewcommand{\baselinestretch}{1.1}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{term_paper.bib}
+%\bibliographystyle{alpha}
 \nocite{*}
 \usepackage{enumerate}
 \usepackage{float}
 \usepackage{amsthm}
 \newtheorem{thm}{Theorem}
 \newtheorem{conj}{Conjecture}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+}
 %\usepackage{tikz-cd}
 %\usepackage{xcolor}
 %\usepackage{url}
@@ -371,7 +380,7 @@ For each quadratic form Q in M:
 \end{verbatim}
 
 \section{Acknowledgements}
-I am indebted to Andrew Cheng, who has contributed comments and criticisms to this term paper.
+I thank Andrew Cheng for contributing many comments and criticisms to this term paper.
 
 \printbibliography
 
