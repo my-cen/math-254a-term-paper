@@ -49,7 +49,9 @@
 \section{Introduction}
 Lagrange's famous four-square theorem states that the quadratic form $x^2+y^2+z^2+w^2$ represents all natural numbers. One may wonder which other quadratic forms have this property of representing all natural numbers. For example, $x^2 + y^2 + z^2 + 2w^2$ works as well. A solution is provided by the 15-Theorem, which I will discuss in this talk.
 
-The 15-Theorem states that a positive-definite integer-matrix quadratic form represents all positive integers exactly when it represents a certain set of nine positive integers, from 1 to 15. These nine numbers are called critical numbers.
+The 15-Theorem states that a positive-definite integer-matrix quadratic form (which I will just call a quadratic form from now on) represents all positive integers exactly when it represents 1, 2, 3, 5, 6, 7, 10, 14, and 15. These nine numbers are called the critical numbers.
+
+A useful corollary of the 15-Theorem is that there are exactly 204 universal four-dimensional quadratic forms.
 
 \section{Definitions}
 Here is some machinery we need for the proof.
@@ -78,8 +80,6 @@ Using arguments on $m \pmod 8$, we obtain three possibilities:
 Because $L = L' \oplus [m]$, if $u - m$ or $u - 4m$ is represented by $L'$, $u$ is represented by $L$. This is false by assumption. Hence, $u$ must be less than $4m$. By computation, $m \le 28$, so $u < 112 = 4 \cdot 28$. Now that we have bounded $u$, we use computer checks to show that $L$ represents all positive integers up to 112. This shows $u$ did not exist in the first place, so $L$ is universal.
 
 There are a few special cases where a slightly modified argument must be applied, but in the end, 201 quaternary escalators are shown to be universal, and all five-dimensional escalators are universal. By analyzing each of these escalators and their truants, we prove the 15-Theorem.
-
-A useful corollary of the 15-Theorem is that there are exactly 204 universal four-dimensional quadratic forms.
 
 \section{Related results}
 A theorem called the 290-Theorem provides a similar criterion as the 15-Theorem, for more general quadratic forms.
