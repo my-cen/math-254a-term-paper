@@ -1,5 +1,5 @@
 \documentclass[letterpaper, 12pt]{article}
-\usepackage{amsmath, amssymb, mathtools} % essentials
+\usepackage{amsmath, amssymb, mathtools, array} % essentials
 \usepackage[left=1in,right=1in,top=1in,bottom=1.5in]{geometry}
 \renewcommand{\baselinestretch}{1.1}
 \usepackage[backend=bibtex]{biblatex}
@@ -74,11 +74,11 @@ A quadratic form is considered to be \emph{universal} if it represents all posit
 In 1770, Lagrange \cite{LagrangeFourSquareTheorem} proved his famous four-square theorem, which is equivalent to the statement that $x^2 + y^2 + z^2 + w^2$ is universal. Legendre considered the numbers represented by $x^2 + y^2 + z^2$. During the nineteenth century, Gauss's concept of genus and Hensel's $p$-adic numbers were invented, two crucial tools in the proof. Together, this allows us to show a ternary quadratic form represents a large set of numbers: we only have to look at how it behaves over each ring of $p$-adic integers $\mathbb{Z}_p$.
 
 In 1916, Ramanujan \cite{ramanujan1916diagonal} gave a list of universal diagonal quaternary quadratic forms and claimed that there were no others. This claim was confirmed by Dickson \cite{Dickson1927} in 1927. This motivated research on finding a complete classification of universal quadratic forms.
-Willerding \cite{willerding1947} claimed to solve the problem of the universal four-dimensional case, finding 178 quadratic forms.
+Willerding \cite{willerding1947} claimed to solve the problem in the case of universal four-dimensional integer-matrix quadratic forms, finding 178 quadratic forms.
 
 In 1993, Conway and Schneeberger announced the first proof of the $15$-Theorem, a theorem giving a full criterion for a quadratic form to be universal. This also provided a shortcut to finding all universal quaternaries, showing Willerding had made a couple of mistakes. There are in fact 204 universal quaternaries.
 The proof of the 15-theorem was extremely complex and required separately analyzing every single case, so it is unpublished.
-But in 2000, Bhargava \cite{fifteen} pioneered a new technique to prove the 15-Theorem, using escalations of lattices, a much simpler, more uniform method.  We will present this method in this paper. This also showed that Willerding had made a couple of errors.
+In 2000, Bhargava \cite{fifteen} pioneered a new technique to prove the 15-Theorem, using escalations of lattices, a much simpler, more uniform method. This also showed that Willerding had made a couple of errors. We will present this versatile method in this paper.
 
 In 2011, Bhargava and Hanke \cite{twoninety} used the same technique, combined with modular forms to deal with every case, to successfully prove the 290-Theorem, a similar result on integer-valued quadratic forms.
 Using a very similar technique, Rouse proved a ``451-Theorem'' \cite{451} on integer-valued quadratic forms representing all odd positive integers in 2014, assuming certain conjectures. Similar theorems have been proved for different sets of numbers to be represented.
@@ -101,12 +101,12 @@ The number 15 is special in this theorem since:
 \begin{thm}\label{15thmgeneral}
     A quadratic form representing all critical numbers besides $15$ must represent all positive integers besides $15$.
 \end{thm}
-By application of the 15-Theorem, we easily obtain an extremely useful classification of universal four-dimensional quadratic forms. These are listed in Appendix A, Table 6.
+By application of the 15-Theorem, we easily obtain an extremely useful classification of universal four-dimensional quadratic forms. These are listed in Appendix A, Table A.6.
 \begin{thm}\label{universal 4d}
     There are exactly $204$ non-isomorphic four-dimensional quadratic forms representing all positive integers.
 \end{thm}
 
-\subsection{The 290-Theorem and Related Results}
+\subsection{The 290-Theorem and Related Results}\label{section:290thm}
 \begin{thm}[The 290-Theorem]\label{290thm}
     A positive-definite \emph{integer-valued} quadratic form represents all positive integers if and only if it represents the twenty-nine numbers
     \[1, 2, 3, 5, 6, 7, 10, 13, 14, 15, 17, 19, 21, 22, 23, 26,\]
@@ -125,7 +125,7 @@ Similar generalizations of theorems 2, 3, and 4 are:
 \end{thm}
 
 \section{Definitions}
-In order to prove the 15-Theorem and 290-Theorem, we will need a few pieces of machinery, introduced in this section.
+In order to prove the 15-Theorem and 290-Theorem, we will need a few pieces of machinery, which we will introduce in this section.
 
 There is a well-known natural bijection between lattices with integer inner products and positive-definite integer-matrix quadratic forms, so any operation on a lattice can be applied to a quadratic form.
 
@@ -149,10 +149,10 @@ By Cauchy-Schwarz, $a$ is $0$ or $\pm 1$, creating two nonisomorphic escalations
 Their truants are $3$ and $5$, respectively. By a similar argument, we can compute the $9$ three-dimensional escalations: they have Minkowski-reduced Gram matrices
 \[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 3 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix},\]
 \[\begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 4 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 5 \end{bmatrix}, \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 5 \end{bmatrix}.\]
-These are also listed in Appendix A, Table 5.
+These are also listed in Appendix A, Table A.5.
 By computation, they have truants
 \[7, 14, 6, 7, 10, 7, 14, 7, 10.\]
-Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices. These 207 escalators are listed in Appendix A, Table 3. An important issue is to determine that the quaternary escalators either have truant in the critical numbers or are universal. We need to determine which of these 207 are universal and which are not, in order to continue.
+Escalating again gives $207$ nonisomorphic four-dimensional escalator lattices. These 207 escalators are listed in Appendix A, Table A.3. An important issue is to determine that the quaternary escalators either have truant in the critical numbers or are universal. We need to determine which of these 207 are universal and which are not, in order to continue.
 
 \subsection{Escalators of Dimension 4}
 By the end of this section, we will show that 201 of the 207 quaternary escalators are universal, and the other 6 have truants 10 or 15.
@@ -176,10 +176,10 @@ Suppose for the sake of contradiction that $L$ is not universal, and let its tru
 
 Therefore, either $u < 4m$ or $u - m$ or $u - 4m$ (depending on $m \pmod 8$) is represented by $L'$. Because $L = L' \oplus [m]$, if $u - m$ or $u - 4m$ is represented by $L'$, $u$ is represented by $L$. This is false by assumption. Hence, $u$ must be less than $4m$. By computation, $m \le 28$, so $u < 112 = 4 \cdot 28$. Now that we have bounded $u$, we use computer checks to show that $L$ represents all positive integers up to $112$. This shows $u$ did not exist in the first place, so $L$ is universal.
 
-By a similar argument, we find that most of the $207$ quaternary lattices are universal. The numbers are provided in Appendix A, Table 1.
+By a similar argument, we find that most of the $207$ quaternary lattices are universal. The numbers are provided in Appendix A, Table A.1.
 
 \subsection{Special Cases for Certain Matrices}
-The argument in the previous section works well most of the time.  There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
+The argument in the previous section works well most of the time. There are only a couple of cases where different arguments have to be used. The three-dimensional escalator lattice
 \[L = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 4 \end{bmatrix}\]
 is not unique in its genus.
 In general, dealing with a quadratic form like this is extremely difficult. For example, the odd numbers not represented by Ramanujan's ternary quadratic form $x^2 + y^2 + 10z^2$ do not have any predictable pattern \cite{OnoSoundararajan1997}.
@@ -189,7 +189,7 @@ which is unique in its genus, and $L$ contains the two lattices
 \[L''_1 = \begin{bmatrix} 2 & -2 & 2 \\ -2 & 5 & 2 \\ 2 & 2 & 8 \end{bmatrix}, L''_2 = \begin{bmatrix} 3 & 0 & 0 \\ 0 & 5 & 4 \\ 0 & 4 & 5 \end{bmatrix}\]
 that together form a genus. The quadratic form $L'$ represents all numbers locally represented by $L'$ that are not congruent to $2, 3 \pmod 4$, and $L''_1, L''_2$ is the same except the condition is replaced with being congruent to $1 \pmod 3$. By the Chinese Remainder Theorem, this makes $L$ represent all numbers it locally represents that are not $7$ or $10 \pmod{12}$. This condition is nearly as good as being unique in a genus, so we may apply essentially the same argument as before.
 
-Exceptional four-dimensional lattices $L$ can usually still have the argument in the previous apply by changing $L'$. That is, $L$ can be an escalator of both $L'$ and $L''$, but $L$ over $L'$ is exceptional, while $L$ over $L''$ is not exceptional. There are only five cases where $L$ is actually exceptional, that is, there are no three-dimensional escalators $L'$ that make $L$ non-exceptional. In these cases, we find a three-dimensional sublattice $L'$ that is unique in its genus, even though $L'$ might not be an escalator. We can apply mostly the same argument as in the previous section. The matrices used are listed in Appendix A, Table 2.
+Exceptional four-dimensional lattices $L$ can usually still have the argument in the previous section apply by changing $L'$. That is, $L$ can be an escalator of both $L'$ and $L''$, but $L$ over $L'$ is exceptional, while $L$ over $L''$ is not exceptional. There are only five cases where $L$ is actually exceptional, that is, there are no three-dimensional escalators $L'$ that make $L$ non-exceptional. In these cases, we find a three-dimensional sublattice $L'$ that is unique in its genus, even though $L'$ might not be an escalator. We can apply mostly the same argument as in the previous section. The matrices used are listed in Appendix A, Table A.2.
 
 \subsection{Escalators of Dimension 5}\label{section:5 dim escalators}
 The $6$ nonuniversal four-dimensional escalators are
@@ -200,7 +200,7 @@ The original paper appears to have a small mistake: the third matrix was mistake
 \[\begin{bmatrix} 1&0&0&0 \\ 0&2&\fbox0&0 \\ 0&\fbox0&5&1 \\ 0&0&1&5\end{bmatrix}\]
 instead of
 \[\begin{bmatrix} 1&0&0&0 \\ 0&2&\fbox1&0 \\ 0&\fbox1&5&1 \\ 0&0&1&5\end{bmatrix}.\]
-These six $4$-dimensional escalators are not universal, with truants $10,10,15,15,15,15$. These six matrices are also listed in Appendix A, Table 4. It is impractical to consider every single one of the 1630 five-dimensional escalators, but we have a trick. We may apply the same argument as above, but the final check that $L$ represents all positive integers up to some number fails with just one number. This shows that these $6$ lattices each miss that number and no others. That number is the lattice's truant, so the $5$-dimensional escalators of the lattice must be universal. This finishes our analysis of escalators.
+These six $4$-dimensional escalators are not universal, with truants $10,10,15,15,15,15$. These six matrices are also listed in Appendix A, Table A.4. It is impractical to consider every single one of the 1630 five-dimensional escalators, but we have a trick. We may apply the same argument as above, but the final check that $L$ represents all positive integers up to some number fails with just one number. This shows that these $6$ lattices each miss that number and no others. That number is the lattice's truant, so the $5$-dimensional escalators of the lattice must be universal. This finishes our analysis of escalators.
 
 \subsection{Final Proof of the 15-Theorem and Related Results}
 This shows all escalators of the zero lattice are at most $5$-dimensional, and that there are exactly $1850$ nonisomorphic escalator lattices of the zero lattice: $1$ of dimension $0$, $1$ of dimension $1$, $2$ of dimension $2$, $9$ of dimension $3$, $207$ of dimension $4$, and $1630$ of dimension $5$. This also proves that a universal lattice $L$ must contain a universal sublattice of dimension $5$ or less, because $L$ must contain a chain of escalations of the zero lattice.
@@ -224,7 +224,7 @@ This shows all escalators of the zero lattice are at most $5$-dimensional, and t
 
 \section{A Sketch of the Proof of the 290-Theorem}
 \subsection{Introduction and 3-Dimensional Escalators}
-The $290$-Theorem \cite{twoninety} states that an integer-\emph{valued} positive-definite quadratic form is universal if and only if it represents the $29$ critical numbers listed earlier,
+The $290$-Theorem \cite{twoninety} states that an integer-\emph{valued} positive-definite quadratic form is universal if and only if it represents the $29$ critical numbers listed in section \ref{section:290thm},
 and it has a similar strengthening as the $15$-Theorem.
 The structure of the proof is mostly the same.
 In this section, a lattice will refer to an integer-\emph{valued} positive-definite lattice.
@@ -250,7 +250,7 @@ In the end, this separates all basic four-dimensional escalator lattices into th
 We would like to consider the further escalations of these basic quaternaries and their truants.
 For types I and II, this is easy.
 Namely, Type I lattices cannot be escalated further at all, and Type II lattices can be escalated at most three times, with each further escalator having truant being one of the critical numbers.
-The main problem is about the escalations of Type III lattices, since they could miss infinitely many numbers. Without further argument, they could conceivably be escalated infinitely many times, yielding quadratic forms of arbitrarily large truant.
+The main problem is considering the escalations of Type III lattices, since they could miss infinitely many numbers. Without further argument, they could conceivably be escalated infinitely many times, yielding quadratic forms of arbitrarily large truant.
 
 The crucial technique used to solve this issue is the ``10-14 switch''.
 It is impractical to consider every four- or five-dimensional escalation of a basic Type III escalator lattices individually.
@@ -281,13 +281,9 @@ This proves similar results as before. Through inspection of each lattice, the z
     By considering chains of escalations within a lattice, all information about lattice universality is contained within the study of escalator lattices. Since all escalator lattices have truants that are critical numbers, the $290$-Theorem is proved.
 \end{proof}
 
-\begin{proof}[Proof of theorem \ref{critnumsneeded} for integer-valued lattices]
-    Just like before, let $n$ be a critical number. We will construct a quadratic form representing all positive integers except $n$. Let $Q$ be a quadratic form of truant $n$ (it is easy to construct one for any $n$). Then,
-    \[Q \oplus [n + 1] \oplus [n + 1] \oplus [n + 1] \oplus [n + 1] \oplus [2n + 1]\]
-    must represent every positive integer besides $n$, by Lagrange's four-square theorem.
-\end{proof}
+Theorem \ref{290critnumsneeded} has mostly the exact same proof as theorem \ref{critnumsneeded}.
 
-\begin{proof}[Proof of theorem \ref{15thmgeneral} for integer-valued lattices]
+\begin{proof}[Proof of theorem \ref{290thmgeneral}]
     We notice that all escalators of truant $290$ must be a sequence of escalations of
     \[\begin{bmatrix}
     1 & 0 & -1/2 & 0 \\
@@ -298,7 +294,7 @@ This proves similar results as before. Through inspection of each lattice, the z
     which fails to represent precisely $145, 203, 290$. Since each of these numbers is less than $290$, this proves the generalization.
 \end{proof}
 
-\begin{proof}[Proof of theorem \ref{universal 4d} for integer-valued lattices]
+\begin{proof}[Proof of theorem \ref{290 universal 4d}]
     We use the same argument as for the case of integer-matrix quadratic forms: finding a bound on the discriminant of such a quadratic form, then systematically applying the 15-Theorem through each case.
 \end{proof}
 
@@ -363,31 +359,14 @@ Recently, Matteo Bordignon and Giacomo Cherubini have proved a generalized versi
 
 \section{Methodology}
 The source code for this term paper is at:\\\url{https://github.com/my-cen/math-254a-term-paper/blob/main/math_254a_term_paper.ipynb}.
-I have calculated the nonuniversal quaternary and ternary escalators, together with their truants, and found a possible minor error in the original paper for the list of $6$ nonuniversal quaternary escalators, mentioned above in section \ref{section:5 dim escalators}. Pseudocode for computing the truant of a quadratic form:
-\begin{verbatim}
-def truant(quadratic form):
-    Let L be the empty list
-    For all tuples of numbers where each number is between -6 and 6
-      (by the 15 theorem this is all we need to check),
-      add the quadratic form applied to the tuple to L
-    For i in 1---15, if i is not in L, return i
-    If all i from 1 to 15 are in L, return +infinity.
-\end{verbatim}
-
-Pseudocode for determining all nonuniversal quaternary escalators:
-\begin{verbatim}
-Let M be the list of all quaternary escalators.
-Let N be an empty list.
-For each quadratic form Q in M:
-    Let a be the truant of Q.
-    If a is finite:
-        Add Q to N.
-        Print out a and Q.
-\end{verbatim}
+I have calculated the nonuniversal quaternary and ternary escalators, together with their truants, and found a possible minor error in the original paper for the list of $6$ nonuniversal quaternary escalators, mentioned above in section \ref{section:5 dim escalators}.
 
 \section{Acknowledgements}
 I thank Andrew Cheng for many comments and criticisms to this term paper.
+\fontsize{10}{12}\selectfont
 
-\printbibliography
+\section{Bibliography}
+\printbibliography[heading=none]
+\include{term_paper_sagemath}
 
 \end{document}
